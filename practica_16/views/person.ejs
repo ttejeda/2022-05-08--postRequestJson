@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitio de <%= ID %></title>
+</head>
+<body>
+    <h1>Person Name: <%= ID %></h1> <%# Imprime el ID recibido de server.js. %>
+    <h2>Message: <%= Message %></h2> <%# Imprime el valor que tiene message. %>
+    <p><%# Validación de el mensaje. %>
+    <% switch (Message) { 
+        case 'Hola': %> <%# Si el mensaje es "Hola", imprime: %>
+            <% for(let i = 1; i <= Times; i++){ %>
+                Hola, <%= ID %>.<br>
+            <% } %>
+        <% break;
+        case 'Adios': %> <%# Si el mensaje es "Adios", imprime: %>
+            <% for(let i = 1; i <= Times; i++){ %>
+                Adiós, <%= ID %>.<br>
+            <% } %>
+        <% break;
+        case 'Bienvenido': %> <%# Si el mensaje es "Bienvenido", imprime: %>
+            <% for(let i = 1; i <= Times; i++){ %>
+                Bienvenido, <%= ID %>.<br>
+            <% } %>
+        <% break;
+        default: %>
+        <h3>"<%= Message %>" no es válido.</h3> <%# Si no se introduce "Hola", "Adios" o "Bienvenido", muestra este mensaje. %>
+    <% } %>
+    </p>
+</body>
+</html>
